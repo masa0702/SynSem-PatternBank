@@ -1,0 +1,107 @@
+services:
+  pytorch:
+    container_name: pattern-gpt-oss
+    build:
+      context: .
+      dockerfile: dockerfile
+      args:
+        - http_tmp=$http_proxy
+        - https_tmp=$https_proxy
+    volumes:
+      - ..:/workspace
+    working_dir: /workspace
+    command: /bin/bash
+    env_file:
+      - .env
+    tty: true
+    stop_signal: SIGINT
+    shm_size: 12GB
+    depends_on:
+      - ollama0
+      - ollama1
+      - ollama2
+      - ollama3
+
+  ollama0:
+    image: ollama/ollama:latest
+    container_name: pattern-ollama0
+    volumes:
+        - ..:/workspace
+        - ../.ollama:/root/.ollama
+    ports:
+      - "11434:11434"
+    env_file:
+      - .env
+    tty: true
+    restart: unless-stopped
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=0
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - capabilities: [gpu]
+              device_ids: ["0"]
+
+  ollama1:
+    image: ollama/ollama:latest
+    container_name: pattern-ollama1
+    volumes:
+        - ..:/workspace
+        - ../.ollama:/root/.ollama
+    ports:
+      - "11435:11434"
+    env_file:
+      - .env
+    tty: true
+    restart: unless-stopped
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=1
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - capabilities: [gpu]
+              device_ids: ["1"]
+
+  ollama2:
+    image: ollama/ollama:latest
+    container_name: pattern-ollama2
+    volumes:
+        - ..:/workspace
+        - ../.ollama:/root/.ollama
+    ports:
+      - "11436:11434"
+    env_file:
+      - .env
+    tty: true
+    restart: unless-stopped
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=2
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - capabilities: [gpu]
+              device_ids: ["2"]
+
+  ollama3:
+    image: ollama/ollama:latest
+    container_name: pattern-ollama3
+    volumes:
+        - ..:/workspace
+        - ../.ollama:/root/.ollama
+    ports:
+      - "11437:11434"
+    env_file:
+      - .env
+    tty: true
+    restart: unless-stopped
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=3
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - capabilities: [gpu]
+              device_ids: ["3"]
