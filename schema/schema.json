@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "PatternRepoOutput",
+  "type": "object",
+  "properties": {
+    "patterns": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "covers": {
+            "type": "array",
+            "items": { "type": "integer", "minimum": 0 },
+            "minItems": 1
+          },
+          "pattern": { "type": "string", "minLength": 1 }
+        },
+        "required": ["covers", "pattern"],
+        "additionalProperties": false
+      },
+      "minItems": 1
+    }
+  },
+  "required": ["patterns"],
+  "additionalProperties": false
+}
