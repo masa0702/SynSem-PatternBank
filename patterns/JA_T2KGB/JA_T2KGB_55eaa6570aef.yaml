@@ -1,0 +1,4 @@
+pattern_id: JA_T2KGB_55eaa6570aef
+status: draft
+pattern: '[X0]は[G{9,9}][X1]が[Y0]および[Y1]を務め'
+ast_sig: 55eaa6570aef574ad89784b35e521243b0eedf39c2e703bbb0160715de922aa4

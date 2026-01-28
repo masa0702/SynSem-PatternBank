@@ -1,0 +1,4 @@
+pattern_id: JA_T2KGB_19b95d1fa0c7
+status: draft
+pattern: '[X0]は[G{1,1}][X1]を[M1]としていました'
+ast_sig: 19b95d1fa0c73bc30719a5e130f1b678d0a44bfb753c1b9d5b5b7d3dc75d4d5f

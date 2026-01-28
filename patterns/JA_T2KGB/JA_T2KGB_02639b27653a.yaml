@@ -1,0 +1,4 @@
+pattern_id: JA_T2KGB_02639b27653a
+status: draft
+pattern: '[X0]は[G{3,3}][X1]によって[Y0]'
+ast_sig: 02639b27653a2193645e14c651b0c2198227578627a0081b94f12ddd3b1381f8

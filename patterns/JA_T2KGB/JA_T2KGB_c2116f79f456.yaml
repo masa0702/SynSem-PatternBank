@@ -1,0 +1,4 @@
+pattern_id: JA_T2KGB_c2116f79f456
+status: draft
+pattern: '[X0]は[G{1,2}]'
+ast_sig: c2116f79f456b8c8822611597412d37a334e0e1e77769dc009d57f7f00c0191b

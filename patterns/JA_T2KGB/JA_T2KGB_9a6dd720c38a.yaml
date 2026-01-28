@@ -1,0 +1,4 @@
+pattern_id: JA_T2KGB_9a6dd720c38a
+status: draft
+pattern: '[X0]は[G{1,2}][Y0][X1]の指揮官であり'
+ast_sig: 9a6dd720c38ac298c0f52db149f7ff6900f78341a039f405d768e3d5c1ae560d

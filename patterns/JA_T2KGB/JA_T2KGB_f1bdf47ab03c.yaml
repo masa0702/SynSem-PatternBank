@@ -1,0 +1,4 @@
+pattern_id: JA_T2KGB_f1bdf47ab03c
+status: draft
+pattern: '[X0][Y0][X1][G{1,1}][X1]'
+ast_sig: f1bdf47ab03c44e150bf03ddb2cdf80d0dcc3729e5040550bc43695fa8186f06

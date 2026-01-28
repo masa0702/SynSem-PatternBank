@@ -1,0 +1,4 @@
+pattern_id: JA_T2KGB_ee9b217f7d61
+status: draft
+pattern: '[X0]は[G{5,5}][X1]が[Y0]を担当しています'
+ast_sig: ee9b217f7d618f1f84d716787c6dfb3b4e88dd7acc60800c389f058b27aec076

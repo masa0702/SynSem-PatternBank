@@ -1,0 +1,4 @@
+pattern_id: JA_T2KGB_d98f79641851
+status: draft
+pattern: '[X0]は[G{1,1}][X1]が[Y0]によって[X2]'
+ast_sig: d98f796418513f9733d06375237539cc9776cee394e300bc02b76fc79d089204

@@ -1,0 +1,4 @@
+pattern_id: JA_T2KGB_8c431eca334e
+status: draft
+pattern: '[X0]は[G{2,2}][X1]に[Y0]していた'
+ast_sig: 8c431eca334e72a72942918fb5289ad884e82fc4ef9af0b719469219b15cd288

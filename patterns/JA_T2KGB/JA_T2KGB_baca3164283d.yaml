@@ -1,0 +1,4 @@
+pattern_id: JA_T2KGB_baca3164283d
+status: draft
+pattern: '[X0]は[X2][G{8,8}]によって[Y1]されました。'
+ast_sig: baca3164283da245df57735db0514dda4d4b90563a1a1ee7d81654e99cf66033
