@@ -1,0 +1,30 @@
+{
+  "input": {
+    "path": "../patterns_from_text.jsonl",
+    "sha256": "181e373d6e78c60b7b905f3449ded2f21b0f37cfb74c611bc2f68e11eeee72c4"
+  },
+  "parser": {
+    "dir": "../pattern_grammar",
+    "grammar_sha256": "b5362905224914eed959b768584d87b55a9dc50ada386af9cdd7f4daaecf7a7d"
+  },
+  "output": {
+    "patterns_dir": "patterns/JA_T2KGB",
+    "index_dir": "index",
+    "patterns_count": 348
+  },
+  "stats": {
+    "read_lines": 782,
+    "bad_json": 0,
+    "missing_pattern": 0,
+    "dup_string": 308,
+    "parse_fail": 0,
+    "dup_ast": 126,
+    "kept": 348,
+    "kept_unparsable": 0
+  },
+  "dedup_policy": {
+    "string_exact": true,
+    "structural_ast": true,
+    "ast_sig": "sha256(canonicalized_ast)"
+  }
+}
