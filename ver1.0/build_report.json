@@ -1,0 +1,13 @@
+{
+  "stats": {
+    "read_lines": 782,
+    "bad_json": 0,
+    "missing_pattern": 0,
+    "dup_string": 308,
+    "parse_fail": 0,
+    "dup_ast": 126,
+    "kept": 348,
+    "kept_unparsable": 0
+  },
+  "kept_final": 348
+}
