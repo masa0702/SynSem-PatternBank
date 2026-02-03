@@ -1,0 +1,4 @@
+pattern_id: JA_T2KGB_646857d2a3bb
+status: draft
+pattern: '[X0]は[G{5,5}][X1]の[M0]支流です'
+ast_sig: 646857d2a3bb0278a73163593ab5bc3cafd46848b35c205ab21edc604c422236

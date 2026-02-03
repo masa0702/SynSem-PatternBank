@@ -1,0 +1,4 @@
+pattern_id: JA_T2KGB_b9b37772a25c
+status: draft
+pattern: '[X0]は[G{1,2}][Y0]に[X1]が続きました'
+ast_sig: b9b37772a25cd79985cf141b8706bacb9f5288c21bcfe6aa8f1ceb59532aef52

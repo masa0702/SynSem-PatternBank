@@ -61,7 +61,10 @@ python tmp/src/build_repo_from_patterns_from_text.py [options]
 2. **pattern文字列が欠落**
    - `bad_records.jsonl` に記録し除外。
 3. **リテラルが含まれない**
-   - ダブルクオートで囲まれたリテラル（`"..."`）が無い場合は除外。
+   - 判定は以下のいずれかで「リテラルあり」とみなす。
+   - パターン文字列中に **ひらがな** が含まれる。
+   - ASTに **Literal ノード** が存在する。
+   - 上記のどちらも満たさない場合は除外。
    - `bad_records.jsonl` に `reason=no_literal` で記録。
 4. **X/Y要素が横並び（無連結）**
    - `[X*][X*]` / `[Y*][Y*]` / `[X*][Y*]` / `[Y*][X*]` のように、
@@ -112,7 +115,7 @@ ASTは以下の方針で **構造を揃えた上でSHA256** を計算します�
 
 ##### index向け抽出特徴
 `pattern` 文字列から以下を抽出します。
-- `has_literal`: ダブルクオートで囲まれたリテラルがあるか
+- `has_literal`: ひらがなが含まれるか
 - `literals`: `"..."` 内のテキスト（最大50件）
 - `pos_constraints`: `-POS` 形式の品詞制約（最大200件）
 

@@ -1,0 +1,4 @@
+pattern_id: JA_T2KGB_8debc6aa938c
+status: draft
+pattern: '[X0]の[G{16,16}][X1]に合流します'
+ast_sig: 8debc6aa938c03a1db4fdcdf0ec0d868e9d6961941913e9ac06e43f89f392532

@@ -1,0 +1,4 @@
+pattern_id: JA_T2KGB_e3e0933ebf84
+status: draft
+pattern: '[X0]は[G{5,5}][X2]によって'
+ast_sig: e3e0933ebf849e40833b0b4ebeb342b52efc5e14d4d78ea4aa977f16f42c5f69

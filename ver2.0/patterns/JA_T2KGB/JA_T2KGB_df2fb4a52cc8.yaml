@@ -1,0 +1,4 @@
+pattern_id: JA_T2KGB_df2fb4a52cc8
+status: draft
+pattern: '[X0]は[G{2,2}][X1]が[Y0]を'
+ast_sig: df2fb4a52cc893d90b6a6cf59d099dc6ece9d600fa151e0ca5f389c053d72e2f

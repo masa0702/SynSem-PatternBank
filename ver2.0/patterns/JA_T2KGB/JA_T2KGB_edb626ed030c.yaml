@@ -1,0 +1,4 @@
+pattern_id: JA_T2KGB_edb626ed030c
+status: draft
+pattern: '[X0]は[X1]という[Y0]です'
+ast_sig: edb626ed030cdaa19733e685daead78cb13614b54519380fa87711cd5a12cadd

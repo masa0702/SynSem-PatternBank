@@ -1,0 +1,4 @@
+pattern_id: JA_T2KGB_820eda534860
+status: draft
+pattern: '[X0]は[G{1,1}]歌手[X1]が'
+ast_sig: 820eda534860ca77c65ffd3a9ddccae3fcb6ddead49a440a28557a87407b331b

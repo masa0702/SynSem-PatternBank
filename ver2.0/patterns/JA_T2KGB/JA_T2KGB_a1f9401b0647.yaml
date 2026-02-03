@@ -1,0 +1,4 @@
+pattern_id: JA_T2KGB_a1f9401b0647
+status: draft
+pattern: '[X0][G{7,7}][M0]『[X1]』の[M2]として、[M3][Y0]。'
+ast_sig: a1f9401b0647f8aa745fd944570bb4765ec95bb7c289fec59d28830d1c768c67

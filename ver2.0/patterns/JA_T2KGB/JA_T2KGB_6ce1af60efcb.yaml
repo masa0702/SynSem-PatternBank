@@ -1,0 +1,4 @@
+pattern_id: JA_T2KGB_6ce1af60efcb
+status: draft
+pattern: '[X0]は[X1]が[Y0]、[X2]&[X3]が[Y1]しました'
+ast_sig: 6ce1af60efcb17a0a600fb64261a3ea0ea4e07b50f4fd23cdd4449c7f0177126

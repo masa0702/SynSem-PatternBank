@@ -1,0 +1,4 @@
+pattern_id: JA_T2KGB_b96fc472efda
+status: draft
+pattern: '[X0]は[G{14,14}][Y0]です'
+ast_sig: b96fc472efda54b3e8d0687195e3ba4e72c26e486ce6a5128017fcfc0ac19abc
