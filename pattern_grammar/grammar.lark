@@ -1,0 +1,78 @@
+%import common.INT
+%import common.WS_INLINE
+%import common.NEWLINE
+
+// 空白・改行・コメント行を破棄
+%ignore WS_INLINE
+%ignore NEWLINE
+%ignore /\/\/[^\n]*/
+
+// --------------- トークン定義 ---------------
+LBRACK   : "["
+RBRACK   : "]"
+LPAR     : "("
+RPAR     : ")"
+AMP      : "&"
+STAR     : "*"
+HASH     : "#"
+LBRACE   : "{"
+RBRACE   : "}"
+COMMA    : ","
+COLON    : ":"
+
+// 変数: X/Y/M のみ（G はギャップ専用）
+VAR      : /[XYM]/
+GAP      : "G"
+TAG      : /[^\]\[\(\)\s]+/
+
+// リテラル：[]&*#() を除く任意の文字列
+literal  : /[^\[\]&\*\#\(\)]+/
+
+// --------------- 文法ルール ---------------
+?start         : pattern
+pattern        : element+
+
+// element は「並列（トップレベル）」「[]式」「リテラル」
+element        : parallel_chain
+               | bracketed
+               | literal
+
+// トップレベルの並列は、最小パターン化のため括弧を要求しない
+parallel_chain : bracketed (AMP bracketed)+
+
+// [] 式
+bracketed      : LBRACK expr RBRACK
+
+// [] 内は「ギャップ」「修飾付き変数」「ブロック繰り返し」のみ
+?expr          : block_repeat
+               | gap_expr
+               | mod_chain
+
+// ギャップ（文節スキップ）: G{m,n}（任意で :TAG を付与可能）
+gap_expr       : GAP LBRACE INT COMMA INT RBRACE gap_tag?
+gap_tag        : COLON TAG
+
+// 修飾子チェーン＋変数本体
+mod_chain      : modifier* var_atom
+
+// modifier
+// - 並列修飾は必ず *n/#n を伴う（例: *1([M0]&[M1])X0）
+modifier       : mod_parallel_count
+               | mod_repeat
+
+// 回数指定修飾 （*n や #n）
+mod_repeat     : STAR INT
+               | HASH INT
+
+// 並列ブロック（修飾用途）: ( [..] & [..] & ... )
+parallel_group_inner : LPAR bracketed (AMP bracketed)+ RPAR
+
+// 並列修飾（必ず回数付き）
+mod_parallel_count : (STAR|HASH) INT parallel_group_inner
+
+// ★ stand-alone block は仕様として [*1([X0]&[X1])] を許可（# は不許可、単一要素も不許可）
+block_repeat   : (STAR|HASH) INT parallel_group_inner
+
+// 変数本体：X1 や Y2-サ変+する
+var_atom       : VAR INT pos_tag?
+pos_tag        : "-" TAG
