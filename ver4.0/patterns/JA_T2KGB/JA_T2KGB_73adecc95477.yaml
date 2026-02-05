@@ -1,0 +1,5 @@
+pattern_id: JA_T2KGB_73adecc95477
+status: draft
+pattern: '[X0]は[G{4,4}][X1]を[G{1,1}][Y0]です。'
+source_id: ont_9_nature_test_378
+ast_sig: 73adecc95477cce733c22dfb5229e3d4432c191cc98fdb5b02079836d41aa990

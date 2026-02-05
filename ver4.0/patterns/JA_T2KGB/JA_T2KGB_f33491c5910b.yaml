@@ -1,0 +1,5 @@
+pattern_id: JA_T2KGB_f33491c5910b
+status: draft
+pattern: '[X0]は[G{1,1}][X1]に[Y0]され'
+source_id: ont_4_book_test_223
+ast_sig: f33491c5910b0e5053ddaf27c17d05e5aa341ac3a6ee199847255ce0746f1580

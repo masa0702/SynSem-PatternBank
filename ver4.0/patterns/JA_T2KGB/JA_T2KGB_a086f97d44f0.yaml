@@ -1,0 +1,5 @@
+pattern_id: JA_T2KGB_a086f97d44f0
+status: draft
+pattern: '[X0]は[G{2,2}][X1]の[Y0]であり'
+source_id: ont_2_music_test_62
+ast_sig: a086f97d44f0de82869020712b3e8037bff9487a831266b2b9be70bc0710a090

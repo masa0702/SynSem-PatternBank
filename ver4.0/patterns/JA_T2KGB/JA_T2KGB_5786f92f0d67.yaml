@@ -1,0 +1,5 @@
+pattern_id: JA_T2KGB_5786f92f0d67
+status: draft
+pattern: '[X0]は[X2][G{8,8}]によって[Y1]されました。'
+source_id: ont_1_movie_test_414
+ast_sig: 5786f92f0d67a47ee3699d5402cc3d49e1f865292973cc32034544de26ffd799

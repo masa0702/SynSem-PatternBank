@@ -1,0 +1,5 @@
+pattern_id: JA_T2KGB_d8fa9e3dfd8f
+status: draft
+pattern: '[X0]は[G{9,9}][X1]が[Y0]および[Y1]を務め'
+source_id: ont_1_movie_test_199
+ast_sig: d8fa9e3dfd8f2cacebdc69108342e6e6713d244816d2682fc1c7bf4f61fff488

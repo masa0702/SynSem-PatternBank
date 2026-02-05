@@ -1,0 +1,5 @@
+pattern_id: JA_T2KGB_6b6073d819e7
+status: draft
+pattern: '[X0]は[X1]に[Y0]'
+source_id: ont_7_space_test_122
+ast_sig: 6b6073d819e79fe016a5a99c7961c6cf02f3941ec8298684a6999592bdb16aef

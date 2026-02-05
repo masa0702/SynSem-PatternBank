@@ -1,0 +1,5 @@
+pattern_id: JA_T2KGB_6f60f4665b61
+status: draft
+pattern: '[X0]は[G{0,6}][Y0]は[X1]'
+source_id: mv_add_116
+ast_sig: 6f60f4665b61c86be49765a4e2e7ba854713b31999d15464a45e4cd986a1c4a1

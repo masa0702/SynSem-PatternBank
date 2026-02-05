@@ -1,0 +1,5 @@
+pattern_id: JA_T2KGB_6ddcfdcc0e33
+status: draft
+pattern: '[M1][M2][M0][X0]は[G{2,2}][X1]と[Y0]'
+source_id: ont_3_sport_test_124
+ast_sig: 6ddcfdcc0e3341722a82fe3241dc9d9f87a7ba298b3291e7df64a05fa8e16795

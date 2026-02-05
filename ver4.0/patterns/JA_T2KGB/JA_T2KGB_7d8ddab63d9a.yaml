@@ -1,0 +1,5 @@
+pattern_id: JA_T2KGB_7d8ddab63d9a
+status: draft
+pattern: '[X0]は[G{3,3}][X1]に[Y0]して'
+source_id: ont_3_sport_test_126
+ast_sig: 7d8ddab63d9a0b1e60489d560671eaf4c5377b4cb39cef01c17f6bbc6cdb60bd

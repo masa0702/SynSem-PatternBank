@@ -1,0 +1,5 @@
+pattern_id: JA_T2KGB_940bf8a5f6ba
+status: draft
+pattern: '[X0]は[G{2,2}][X1]に[Y0]していました'
+source_id: ont_3_sport_test_287
+ast_sig: 940bf8a5f6baf69d18e83649590ae4c29be11e3a9a88166af7bfedac2caa1ba2

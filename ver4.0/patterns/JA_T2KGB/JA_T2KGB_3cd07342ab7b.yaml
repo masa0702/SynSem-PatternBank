@@ -1,0 +1,5 @@
+pattern_id: JA_T2KGB_3cd07342ab7b
+status: draft
+pattern: '[X0]は[G{9,9}] [X1]を[Y0]としています'
+source_id: ont_9_nature_test_235
+ast_sig: 3cd07342ab7b1eef0a68be4a4033bdaf793c003c65c619944953ab83761771e5

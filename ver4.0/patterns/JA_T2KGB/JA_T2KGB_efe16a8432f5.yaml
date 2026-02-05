@@ -1,0 +1,5 @@
+pattern_id: JA_T2KGB_efe16a8432f5
+status: draft
+pattern: '[X0]は[G{1,2}][Y0]に[X1]が続きました'
+source_id: ont_4_book_test_77
+ast_sig: efe16a8432f55a5febeea41728266405619ca74e9b4900144118519bf6b5d340

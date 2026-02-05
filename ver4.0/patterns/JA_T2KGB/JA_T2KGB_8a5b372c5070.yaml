@@ -1,0 +1,5 @@
+pattern_id: JA_T2KGB_8a5b372c5070
+status: draft
+pattern: '[X0]は[G{1,2}][X1]&[X2]が[Y0]で'
+source_id: ont_1_movie_test_129
+ast_sig: 8a5b372c5070b89b93204336e9a3bc465245c46d2efe271debf5fc8d9778a004

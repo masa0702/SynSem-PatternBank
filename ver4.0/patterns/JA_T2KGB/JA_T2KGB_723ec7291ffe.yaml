@@ -1,0 +1,5 @@
+pattern_id: JA_T2KGB_723ec7291ffe
+status: draft
+pattern: '[X0]は[G{0,8}][X1][G{0,0}][Y0]'
+source_id: comp_add_005
+ast_sig: 723ec7291ffed4eb26e1ab579459b75bf5ba5671dad2874587ad634a7cb4a624

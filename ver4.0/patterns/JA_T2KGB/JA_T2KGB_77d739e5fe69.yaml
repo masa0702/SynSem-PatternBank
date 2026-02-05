@@ -1,0 +1,5 @@
+pattern_id: JA_T2KGB_77d739e5fe69
+status: draft
+pattern: '[X0]は[X1]が[Y0]し、[Y0]した'
+source_id: ont_6_computer_test_83
+ast_sig: 77d739e5fe6980110854d1feb6eef7a68e605f674929696e3e3bd15c2d88bf65

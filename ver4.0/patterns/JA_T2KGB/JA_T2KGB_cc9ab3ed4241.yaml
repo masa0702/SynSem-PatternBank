@@ -1,0 +1,5 @@
+pattern_id: JA_T2KGB_cc9ab3ed4241
+status: draft
+pattern: '[X0]は[G{1,1}][X1]が[Y0]を務め'
+source_id: ont_2_music_test_573
+ast_sig: cc9ab3ed424190b4c1ee0352c4eb48bd0c5e6ea1787ac5756776f88de3b90845

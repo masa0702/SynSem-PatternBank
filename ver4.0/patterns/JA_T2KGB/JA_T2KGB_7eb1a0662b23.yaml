@@ -1,0 +1,5 @@
+pattern_id: JA_T2KGB_7eb1a0662b23
+status: draft
+pattern: '[X0]から[Y0]した[G{3,3}][M0]の[X1]'
+source_id: ont_6_computer_test_178
+ast_sig: 7eb1a0662b23c2147d661eecd009413a98f2b7ea0a1850fc1965bec85c940a1a

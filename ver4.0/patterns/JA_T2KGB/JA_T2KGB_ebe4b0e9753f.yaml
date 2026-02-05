@@ -1,0 +1,5 @@
+pattern_id: JA_T2KGB_ebe4b0e9753f
+status: draft
+pattern: '[X0]は[G{1,4}][X1]が[Y0]'
+source_id: ont_5_military_test_222
+ast_sig: ebe4b0e9753fb3773e17c8c85906dce633f5ef52e5284477779b2a4bdebca47c

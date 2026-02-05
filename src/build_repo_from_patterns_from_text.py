@@ -181,9 +181,9 @@ def main() -> None:
         default="../patterns_from_manually.jsonl",
         help="手動作成パターンJSONL（存在しない場合はスキップ）",
     )
-    ap.add_argument("--tmp-dir", default="tmp")
-    ap.add_argument("--patterns-dir", default="patterns/JA_T2KGB")
-    ap.add_argument("--index-dir", default="index")
+    ap.add_argument("--tmp-dir", default="../ver4.0/")
+    ap.add_argument("--patterns-dir", default="../ver4.0/patterns/JA_T2KGB")
+    ap.add_argument("--index-dir", default="../ver4.0/index")
     ap.add_argument("--pattern-key", default=None, help="入力JSONのパターン文字列キー（指定しないと推測）")
     ap.add_argument("--status", default="draft", choices=("draft", "verified", "deprecated"))
     ap.add_argument("--id-prefix", default="JA_T2KGB_", help="pattern_idのprefix（既定: JA_T2KGB_）")

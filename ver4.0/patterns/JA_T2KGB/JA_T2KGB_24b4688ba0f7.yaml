@@ -1,0 +1,5 @@
+pattern_id: JA_T2KGB_24b4688ba0f7
+status: draft
+pattern: '[X0]は[G{1,5}][X1]に[Y0]します'
+source_id: ont_9_nature_test_269
+ast_sig: 24b4688ba0f7c2e366ce9d1ac19e28c9c3fc54fe429293132b36a75ba42c8dd2

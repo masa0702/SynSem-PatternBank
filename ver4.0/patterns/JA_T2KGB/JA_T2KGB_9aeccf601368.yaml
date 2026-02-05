@@ -1,0 +1,5 @@
+pattern_id: JA_T2KGB_9aeccf601368
+status: draft
+pattern: '[X0]は[G{3,3}][X1]を[Y0]しました'
+source_id: ont_1_movie_test_346
+ast_sig: 9aeccf601368c7850e3bddc15209b7e60627c19548f89bf4b6beccd24402ca65

@@ -1,0 +1,5 @@
+pattern_id: JA_T2KGB_5bca11fa03a3
+status: draft
+pattern: '[X0][G{7,7}][M0]『[X1]』の[M2]として、[M3][Y0]。'
+source_id: ont_2_music_test_63
+ast_sig: 5bca11fa03a368891c508a090d2a286cdcdb3a34a18716b5315e5486e8da1222

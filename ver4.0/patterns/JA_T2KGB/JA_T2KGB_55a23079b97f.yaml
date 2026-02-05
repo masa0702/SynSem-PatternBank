@@ -1,0 +1,5 @@
+pattern_id: JA_T2KGB_55a23079b97f
+status: draft
+pattern: '[X0]は[X1]から[G{1,1}][Y1]され'
+source_id: ont_4_book_test_223
+ast_sig: 55a23079b97f22a61d1bf7eb14f96e835789bd4d8fb9a4ccae1b15f2aa04b559

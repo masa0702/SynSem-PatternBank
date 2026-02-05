@@ -1,0 +1,5 @@
+pattern_id: JA_T2KGB_981080e0ad68
+status: draft
+pattern: '[X0]は[G{1,1}][X1]で[Y0]され'
+source_id: ont_7_space_test_5
+ast_sig: 981080e0ad68fd883347f294dbddd3b3b90cf599f92c59bb6ef2529f5347eace

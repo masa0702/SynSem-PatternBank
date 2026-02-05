@@ -1,0 +1,5 @@
+pattern_id: JA_T2KGB_593001ef398c
+status: draft
+pattern: '[X0]は[X1]&[X2]が[Y0]で'
+source_id: ont_6_computer_test_97
+ast_sig: 593001ef398cd92ebb5fbd8a95d2c793b5c0d1f149d5e4be298eb114c3f08659

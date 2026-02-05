@@ -1,0 +1,5 @@
+pattern_id: JA_T2KGB_85eece633d7b
+status: draft
+pattern: '[X0]は[X1]によって[Y0]され'
+source_id: ont_5_military_test_185
+ast_sig: 85eece633d7bb0324f88d6a35359163e1ce913a130fbed5e839b2d3f4af814ce

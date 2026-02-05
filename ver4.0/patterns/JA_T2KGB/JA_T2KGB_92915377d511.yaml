@@ -1,0 +1,5 @@
+pattern_id: JA_T2KGB_92915377d511
+status: draft
+pattern: '[X0]は[G{9,9}][X1]という[Y0]を作ります'
+source_id: ont_9_nature_test_362
+ast_sig: 92915377d51107a582107cf74fc0a99c6cf4211084810f4356cd8ae0f40403f1

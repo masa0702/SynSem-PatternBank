@@ -1,0 +1,5 @@
+pattern_id: JA_T2KGB_39feadbba238
+status: draft
+pattern: '[X0]は[Y0]として[X1]&[X2]が'
+source_id: ont_9_nature_test_201
+ast_sig: 39feadbba238b1658a110db3cdb9943265f609251dbf175b501ed7de1e76406a

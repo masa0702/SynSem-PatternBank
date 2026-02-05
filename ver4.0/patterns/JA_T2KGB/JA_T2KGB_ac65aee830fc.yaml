@@ -1,0 +1,5 @@
+pattern_id: JA_T2KGB_ac65aee830fc
+status: draft
+pattern: '[X0]は[G{1,1}][X1][M1]が[Y1]として[G{1,1}]でした'
+source_id: ont_6_computer_test_114
+ast_sig: ac65aee830fc4ed348c2b9b39815c07be6269ce004b270f6c3063f2a9a7aed6a

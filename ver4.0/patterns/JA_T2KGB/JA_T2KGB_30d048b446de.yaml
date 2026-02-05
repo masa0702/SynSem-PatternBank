@@ -1,0 +1,5 @@
+pattern_id: JA_T2KGB_30d048b446de
+status: draft
+pattern: '[X0]は[G{7,7}][X1]が[Y0]です'
+source_id: ont_4_book_test_420
+ast_sig: 30d048b446def7dbb53b39e248a40cc56ffab745d73f26de20382efc38c96550

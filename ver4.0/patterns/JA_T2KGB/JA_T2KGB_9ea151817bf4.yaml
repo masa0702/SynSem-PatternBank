@@ -1,0 +1,5 @@
+pattern_id: JA_T2KGB_9ea151817bf4
+status: draft
+pattern: '[X0]は[G{5,5}][X1]が[Y0]を担当しています'
+source_id: ont_1_movie_test_217
+ast_sig: 9ea151817bf4ae32aeed22530e6942fedaf8311fa07e16c97a01cd4ccbddd896

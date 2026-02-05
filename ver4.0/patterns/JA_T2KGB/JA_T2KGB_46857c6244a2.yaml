@@ -1,0 +1,5 @@
+pattern_id: JA_T2KGB_46857c6244a2
+status: draft
+pattern: '[X0]は[G{1,2}][X1]が[Y0]され'
+source_id: ont_2_music_test_348
+ast_sig: 46857c6244a2f768ad40839d3f44e8a4de107253b0add6b401b707b1181f50e2

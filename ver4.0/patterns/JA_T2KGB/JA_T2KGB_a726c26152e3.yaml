@@ -1,0 +1,5 @@
+pattern_id: JA_T2KGB_a726c26152e3
+status: draft
+pattern: '[X0]は[G{4,4}][X1]が[G{3,3}][Y0]している'
+source_id: ont_8_politics_test_213
+ast_sig: a726c26152e37f8883fea46ed43f2fa7de7c32d487a413313e37d244ff0f0732

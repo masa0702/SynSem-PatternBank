@@ -1,0 +1,5 @@
+pattern_id: JA_T2KGB_db6be8c95adb
+status: draft
+pattern: '[X0]は[X1]は[Y0]です。'
+source_id: ont_3_sport_test_173
+ast_sig: db6be8c95adbef120c9dbcca4ecaf1d3d906709c1f8de071bc8d6f0ded5a941c

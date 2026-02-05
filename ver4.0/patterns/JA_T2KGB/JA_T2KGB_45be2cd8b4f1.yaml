@@ -1,0 +1,5 @@
+pattern_id: JA_T2KGB_45be2cd8b4f1
+status: draft
+pattern: '[X0]は[X1]が[Y0]であり、[Y1]でもある、'
+source_id: ont_2_music_test_505
+ast_sig: 45be2cd8b4f17e28496462401b18359b80bd3ad9144a394df24e7d7f0b5e01b6

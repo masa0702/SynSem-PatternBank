@@ -1,0 +1,5 @@
+pattern_id: JA_T2KGB_b42aea3b0c0d
+status: draft
+pattern: '[X0]は[G{6,6}][X1]で[Y0]されました'
+source_id: ont_7_space_test_16
+ast_sig: b42aea3b0c0df87a6b3e5911974490f778c4a3dc9461996ad237d125577d4d85

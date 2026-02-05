@@ -1,0 +1,5 @@
+pattern_id: JA_T2KGB_a5d114edbb25
+status: draft
+pattern: '[X0]は[G{5,5}][X1]で[Y0]'
+source_id: ont_1_movie_test_715
+ast_sig: a5d114edbb25ea09dba1fd94d3a7c8221f3fdda7473f2b4b20f9a8761e10b388

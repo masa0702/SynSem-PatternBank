@@ -1,0 +1,20 @@
+{
+  "stats": {
+    "read_lines": 851,
+    "read_lines_by_input": {
+      "../patterns_from_text.jsonl": 782,
+      "../patterns_from_manually.jsonl": 69
+    },
+    "bad_json": 0,
+    "missing_pattern": 0,
+    "no_literal": 0,
+    "adjacent_xy": 46,
+    "dup_string": 331,
+    "parse_fail": 0,
+    "dup_ast": 132,
+    "kept": 342,
+    "kept_unparsable": 0,
+    "missing_inputs": []
+  },
+  "kept_final": 342
+}

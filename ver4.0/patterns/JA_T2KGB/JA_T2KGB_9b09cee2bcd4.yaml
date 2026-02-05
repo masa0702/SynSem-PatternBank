@@ -1,0 +1,5 @@
+pattern_id: JA_T2KGB_9b09cee2bcd4
+status: draft
+pattern: '[X0]は[G{1,1}][X1]映画で、'
+source_id: ont_1_movie_test_168
+ast_sig: 9b09cee2bcd4af36216702e6625078f3f98fca608f866fe397276fb7e5a7dc86
