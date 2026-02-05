@@ -1,7 +1,7 @@
 # build_repo_from_patterns_from_text.py ドキュメント
 
 ## 1. 目的と位置づけ
-`tmp/src/build_repo_from_patterns_from_text.py` は、`patterns_from_text.jsonl` を入力として「パターンリポジトリ」を生成するバッチです。具体的には、以下を作成・更新します。
+`tmp/src/build_repo_from_patterns_from_text.py` は、`patterns_from_text.jsonl` と `patterns_from_manually.jsonl` を入力として「パターンリポジトリ」を生成するバッチです。具体的には、以下を作成・更新します。
 
 - `patterns/JA_T2KGB/*.yaml`（個別パターンのYAML）
 - `index/patterns.jsonl`（検索向けのJSONL）
@@ -15,6 +15,10 @@
 - `../patterns_from_text.jsonl`（既定）
   - `--input` で変更可能。
   - 各行はJSON。キーは `pattern` が標準ですが、`pattern_str / pattern_text / pattern_raw` も許容。
+- `../patterns_from_manually.jsonl`（既定）
+  - `--input-manual` で変更可能。
+  - 存在しない場合はスキップされる。
+  - 手動作成データは `pattern` と `id` だけでも可。
 
 ### 依存ディレクトリ（必須）
 - `../pattern_grammar`（既定）
@@ -42,6 +46,7 @@ python tmp/src/build_repo_from_patterns_from_text.py [options]
 
 主な引数：
 - `--input`：入力JSONL（既定 `../patterns_from_text.jsonl`）
+- `--input-manual`：手動パターンJSONL（既定 `../patterns_from_manually.jsonl`、存在しない場合はスキップ）
 - `--tmp-dir`：中間ディレクトリ（既定 `tmp`）
 - `--patterns-dir`：YAML出力先（既定 `patterns/JA_T2KGB`）
 - `--index-dir`：index出力先（既定 `index`）
@@ -54,7 +59,7 @@ python tmp/src/build_repo_from_patterns_from_text.py [options]
 
 ## 4. 処理フロー（詳細）
 ### 4.1 1st pass: streamingで重複除去
-入力JSONLを読みながら、以下の条件で重複・不正を排除します。
+2つの入力JSONLを合算して読みながら、以下の条件で重複・不正を排除します。
 
 1. **JSONが壊れている**
    - `bad_records.jsonl` に記録し除外。
@@ -104,6 +109,7 @@ ASTは以下の方針で **構造を揃えた上でSHA256** を計算します�
 - `pattern_id`
 - `status`
 - `pattern`
+- `source_id`（入力に `id` または `pattern_id` があった場合）
 - `ast_sig`（存在すれば）
 - `parse_error`（存在すれば）
 
@@ -121,7 +127,7 @@ ASTは以下の方針で **構造を揃えた上でSHA256** を計算します�
 
 #### MANIFEST
 `index/MANIFEST.json` には以下を記録します。
-- 入力ファイルのパスとSHA256
+- 入力ファイル（複数可）のパス・存在有無・SHA256
 - parser/grammar のSHA256（存在すれば）
 - 出力先ディレクトリと件数
 - 統計情報（読み込み数、重複数、パース失敗数など）

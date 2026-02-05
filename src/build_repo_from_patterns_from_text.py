@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 """
-tmp/patterns_from_text.jsonl から
+tmp/patterns_from_text.jsonl と tmp/patterns_from_manually.jsonl から
 - patterns/JA_T2KGB/*.yaml
 - index/patterns.jsonl
 - index/patterns.index.json
@@ -175,7 +175,12 @@ def yaml_dump(data: Dict[str, Any]) -> str:
 # -------------------------
 def main() -> None:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--input", default="../patterns_from_text.jsonl")
+    ap.add_argument("--input", default="../patterns_from_text.jsonl", help="自動生成パターンJSONL")
+    ap.add_argument(
+        "--input-manual",
+        default="../patterns_from_manually.jsonl",
+        help="手動作成パターンJSONL（存在しない場合はスキップ）",
+    )
     ap.add_argument("--tmp-dir", default="tmp")
     ap.add_argument("--patterns-dir", default="patterns/JA_T2KGB")
     ap.add_argument("--index-dir", default="index")
@@ -189,6 +194,7 @@ def main() -> None:
 
     repo_root = Path(".")
     in_path = repo_root / args.input
+    in_manual_path = repo_root / args.input_manual if args.input_manual else None
     tmp_dir = repo_root / args.tmp_dir
     patterns_dir = repo_root / args.patterns_dir
     index_dir = repo_root / args.index_dir
@@ -221,12 +227,30 @@ def main() -> None:
     if bad_path.exists():
         bad_path.unlink()
 
+    # 入力リスト（存在しないファイルはスキップ）
+    input_paths: List[Path] = []
+    if in_path:
+        input_paths.append(in_path)
+    if in_manual_path and in_manual_path != in_path:
+        input_paths.append(in_manual_path)
+
+    missing_inputs: List[str] = []
+    existing_inputs: List[Path] = []
+    for p in input_paths:
+        if p.exists():
+            existing_inputs.append(p)
+        else:
+            missing_inputs.append(str(p))
+    if missing_inputs:
+        print(f"WARN: missing input files skipped: {', '.join(missing_inputs)}", file=sys.stderr)
+
     # dedup用
     seen_str = set()
     seen_ast = set()
 
     stats = {
         "read_lines": 0,
+        "read_lines_by_input": {},
         "bad_json": 0,
         "missing_pattern": 0,
         "no_literal": 0,
@@ -236,93 +260,117 @@ def main() -> None:
         "dup_ast": 0,
         "kept": 0,
         "kept_unparsable": 0,
+        "missing_inputs": missing_inputs,
     }
 
     # 1st pass: streamingで重複除去しつつ stage に落とす
     with stage_path.open("w", encoding="utf-8") as wf_stage, bad_path.open("w", encoding="utf-8") as wf_bad:
-        for ln, rec in tqdm(iter_jsonl(in_path), desc="dedup+parse", unit="line"):
-            stats["read_lines"] += 1
+        for src_path in existing_inputs:
+            src_key = str(src_path)
+            stats["read_lines_by_input"][src_key] = 0
+            for ln, rec in tqdm(iter_jsonl(src_path), desc=f"dedup+parse:{src_path.name}", unit="line"):
+                stats["read_lines"] += 1
+                stats["read_lines_by_input"][src_key] += 1
 
-            if rec.get("__bad_json__"):
-                stats["bad_json"] += 1
-                wf_bad.write(json.dumps({"line": ln, "reason": "bad_json", **rec}, ensure_ascii=False) + "\n")
-                continue
-
-            ptxt = get_pattern_text(rec, args.pattern_key)
-            if not ptxt:
-                stats["missing_pattern"] += 1
-                wf_bad.write(json.dumps({"line": ln, "reason": "missing_pattern", "record": rec}, ensure_ascii=False) + "\n")
-                continue
-
-            if has_adjacent_xy(ptxt):
-                stats["adjacent_xy"] += 1
-                wf_bad.write(
-                    json.dumps(
-                        {"line": ln, "reason": "adjacent_xy", "pattern": ptxt, "record": rec}, ensure_ascii=False
-                    )
-                    + "\n"
-                )
-                continue
-
-            # 文字列完全一致
-            if ptxt in seen_str:
-                stats["dup_string"] += 1
-                continue
-            seen_str.add(ptxt)
-
-            # AST パース & 構造重複
-            ast_sig = None
-            parse_error = None
-            try:
-                ast = parser.parse(ptxt)
-                ast_sig = ast_signature(ast)
-                if not (has_literal_text(ptxt) or ast_has_literal_node(ast)):
-                    stats["no_literal"] += 1
+                if rec.get("__bad_json__"):
+                    stats["bad_json"] += 1
                     wf_bad.write(
-                        json.dumps(
-                            {"line": ln, "reason": "no_literal", "pattern": ptxt, "record": rec},
-                            ensure_ascii=False,
-                        )
+                        json.dumps({"input": src_key, "line": ln, "reason": "bad_json", **rec}, ensure_ascii=False)
                         + "\n"
                     )
                     continue
-                if ast_sig in seen_ast:
-                    stats["dup_ast"] += 1
-                    continue
-                seen_ast.add(ast_sig)
-            except Exception as e:
-                parse_error = str(e)
-                stats["parse_fail"] += 1
-                if not has_literal_text(ptxt):
-                    stats["no_literal"] += 1
+
+                ptxt = get_pattern_text(rec, args.pattern_key)
+                if not ptxt:
+                    stats["missing_pattern"] += 1
                     wf_bad.write(
                         json.dumps(
-                            {"line": ln, "reason": "no_literal", "pattern": ptxt, "record": rec},
-                            ensure_ascii=False,
-                        )
-                        + "\n"
-                    )
-                    continue
-                if not args.keep_unparsable:
-                    wf_bad.write(
-                        json.dumps(
-                            {"line": ln, "reason": "parse_fail", "error": parse_error, "pattern": ptxt, "record": rec},
+                            {"input": src_key, "line": ln, "reason": "missing_pattern", "record": rec},
                             ensure_ascii=False,
                         )
                         + "\n"
                     )
                     continue
 
-            out_min = {
-                "pattern": ptxt,
-                "ast_sig": ast_sig,
-                "parse_error": parse_error,
-                "source": rec,  # 元レコードを保持（必要最小限にしたいなら削る）
-            }
-            wf_stage.write(json.dumps(out_min, ensure_ascii=False) + "\n")
-            stats["kept"] += 1
-            if ast_sig is None:
-                stats["kept_unparsable"] += 1
+                if has_adjacent_xy(ptxt):
+                    stats["adjacent_xy"] += 1
+                    wf_bad.write(
+                        json.dumps(
+                            {"input": src_key, "line": ln, "reason": "adjacent_xy", "pattern": ptxt, "record": rec},
+                            ensure_ascii=False,
+                        )
+                        + "\n"
+                    )
+                    continue
+
+                # 文字列完全一致
+                if ptxt in seen_str:
+                    stats["dup_string"] += 1
+                    continue
+                seen_str.add(ptxt)
+
+                # AST パース & 構造重複
+                ast_sig = None
+                parse_error = None
+                try:
+                    ast = parser.parse(ptxt)
+                    ast_sig = ast_signature(ast)
+                    if not (has_literal_text(ptxt) or ast_has_literal_node(ast)):
+                        stats["no_literal"] += 1
+                        wf_bad.write(
+                            json.dumps(
+                                {"input": src_key, "line": ln, "reason": "no_literal", "pattern": ptxt, "record": rec},
+                                ensure_ascii=False,
+                            )
+                            + "\n"
+                        )
+                        continue
+                    if ast_sig in seen_ast:
+                        stats["dup_ast"] += 1
+                        continue
+                    seen_ast.add(ast_sig)
+                except Exception as e:
+                    parse_error = str(e)
+                    stats["parse_fail"] += 1
+                    if not has_literal_text(ptxt):
+                        stats["no_literal"] += 1
+                        wf_bad.write(
+                            json.dumps(
+                                {"input": src_key, "line": ln, "reason": "no_literal", "pattern": ptxt, "record": rec},
+                                ensure_ascii=False,
+                            )
+                            + "\n"
+                        )
+                        continue
+                    if not args.keep_unparsable:
+                        wf_bad.write(
+                            json.dumps(
+                                {
+                                    "input": src_key,
+                                    "line": ln,
+                                    "reason": "parse_fail",
+                                    "error": parse_error,
+                                    "pattern": ptxt,
+                                    "record": rec,
+                                },
+                                ensure_ascii=False,
+                            )
+                            + "\n"
+                        )
+                        continue
+
+                out_min = {
+                    "pattern": ptxt,
+                    "ast_sig": ast_sig,
+                    "parse_error": parse_error,
+                    "input_path": src_key,
+                    "input_line": ln,
+                    "source": rec,  # 元レコードを保持（必要最小限にしたいなら削る）
+                }
+                wf_stage.write(json.dumps(out_min, ensure_ascii=False) + "\n")
+                stats["kept"] += 1
+                if ast_sig is None:
+                    stats["kept_unparsable"] += 1
 
     # 2nd pass: stage を読み、pattern_id を確定して patterns/index を生成
     # pattern_id は ASTハッシュ由来で安定化（並び順に依存しない）
@@ -362,6 +410,10 @@ def main() -> None:
             ptxt = obj["pattern"]
             ast_sig = obj.get("ast_sig")
             pid = make_pattern_id(ast_sig, ptxt)
+            source_id = None
+            src = obj.get("source")
+            if isinstance(src, dict):
+                source_id = src.get("id") or src.get("pattern_id")
 
             # YAML record（必要最小限）
             record = {
@@ -369,6 +421,8 @@ def main() -> None:
                 "status": args.status,
                 "pattern": ptxt,
             }
+            if source_id:
+                record["source_id"] = source_id
             if ast_sig:
                 record["ast_sig"] = ast_sig
             if obj.get("parse_error"):
@@ -419,11 +473,18 @@ def main() -> None:
     )
 
     # MANIFEST
+    manifest_inputs = []
+    for p in input_paths:
+        manifest_inputs.append(
+            {
+                "path": str(p),
+                "exists": p.exists(),
+                "sha256": sha256_file(p) if p.exists() else None,
+            }
+        )
+
     manifest = {
-        "input": {
-            "path": str(in_path),
-            "sha256": sha256_file(in_path) if in_path.exists() else None,
-        },
+        "inputs": manifest_inputs,
         "parser": {
             "dir": str(parser_dir),
             "grammar_sha256": sha256_file(parser_dir / "grammar.lark") if (parser_dir / "grammar.lark").exists() else None,
