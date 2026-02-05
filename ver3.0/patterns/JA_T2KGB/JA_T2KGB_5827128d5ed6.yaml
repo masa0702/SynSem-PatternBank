@@ -1,0 +1,5 @@
+pattern_id: JA_T2KGB_5827128d5ed6
+status: draft
+pattern: '[X0]は[X1]が[Y0]であり[Y1]である'
+source_id: ont_4_book_test_287
+ast_sig: 5827128d5ed6027b230524abed5b32e4319bb460cb9fc2ab3110c60077b81d7b

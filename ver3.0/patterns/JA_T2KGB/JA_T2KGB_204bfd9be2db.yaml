@@ -1,0 +1,5 @@
+pattern_id: JA_T2KGB_204bfd9be2db
+status: draft
+pattern: '[X0]は[G{2,2}][X1]に[Y0]していた'
+source_id: ont_8_politics_test_155
+ast_sig: 204bfd9be2db3e2c1afd289132e7b57c241b10e31b9e87a195dd1c23c079aeaf

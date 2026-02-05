@@ -1,0 +1,5 @@
+pattern_id: JA_T2KGB_064094316e0a
+status: draft
+pattern: '[X0]の[X1]は[X2]&[X3]で、[X4]は[X5]&[X6]です。'
+source_id: ont_1_movie_test_580
+ast_sig: 064094316e0a583c373c4c98b6c1144a2143060c6dcf5c60d814eeb0f03564ca

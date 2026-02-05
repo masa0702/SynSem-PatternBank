@@ -1,0 +1,5 @@
+pattern_id: JA_T2KGB_dd3651cdb77e
+status: draft
+pattern: '[X0]は[G{2,2}][X1]&[X2]が[Y1]を'
+source_id: ont_1_movie_test_71
+ast_sig: dd3651cdb77ead920dda6417533c56870e5f4e627e87b1995e9048b3b189424e

@@ -1,0 +1,5 @@
+pattern_id: JA_T2KGB_96dd6347edb6
+status: draft
+pattern: '[X0]は[X1]&[X2]が[Y0]である'
+source_id: mus_add_014
+ast_sig: 96dd6347edb6c7761d9b7f4a343583199c9839e7607b0fbcb8b026d810df421f

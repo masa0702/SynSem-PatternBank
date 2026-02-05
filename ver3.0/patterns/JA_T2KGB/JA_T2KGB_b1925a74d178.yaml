@@ -1,0 +1,5 @@
+pattern_id: JA_T2KGB_b1925a74d178
+status: draft
+pattern: '[X0]の [Y0]は [X1]です。'
+source_id: ont_4_book_test_221
+ast_sig: b1925a74d17874216aeb3c9ce102a3bdafff70a1f8a0f7ca68c62405e9722aeb

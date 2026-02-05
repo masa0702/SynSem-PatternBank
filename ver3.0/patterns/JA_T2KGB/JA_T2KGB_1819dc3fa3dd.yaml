@@ -1,0 +1,5 @@
+pattern_id: JA_T2KGB_1819dc3fa3dd
+status: draft
+pattern: '[X0]は[G{5,5}][X1]&[X2]が[Y0]しています'
+source_id: ont_1_movie_test_128
+ast_sig: 1819dc3fa3dda09d3cedd8b557b06795da45840a75534f74af4e307205974d94

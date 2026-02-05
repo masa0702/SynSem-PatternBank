@@ -1,0 +1,5 @@
+pattern_id: JA_T2KGB_ba9e42d477cc
+status: draft
+pattern: '[X0]は[G{3,3}][X1]によって[Y0]'
+source_id: ont_6_computer_test_225
+ast_sig: ba9e42d477cc96d6565e1e75a4de8aca0930f505d33bda49deac5373b106fc30

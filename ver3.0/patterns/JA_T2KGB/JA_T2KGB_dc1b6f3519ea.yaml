@@ -1,0 +1,5 @@
+pattern_id: JA_T2KGB_dc1b6f3519ea
+status: draft
+pattern: '[X0]は[G{1,8}][X1]に'
+source_id: ont_5_military_test_97
+ast_sig: dc1b6f3519ea90ae902501f551d02d7e5947fc15f50764556b18d3e1ae3d5c1f

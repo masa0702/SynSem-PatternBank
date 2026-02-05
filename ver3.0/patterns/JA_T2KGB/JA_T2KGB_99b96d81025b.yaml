@@ -1,0 +1,5 @@
+pattern_id: JA_T2KGB_99b96d81025b
+status: draft
+pattern: '[X0]は[G{1,2}][X1]に入隊し'
+source_id: ont_5_military_test_73
+ast_sig: 99b96d81025bb94e45b6ad755f3398bf0649a6d1fce9c7ddbae85f0ff8cd0082

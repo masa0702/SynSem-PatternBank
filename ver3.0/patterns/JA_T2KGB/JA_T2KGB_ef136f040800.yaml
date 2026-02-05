@@ -1,0 +1,5 @@
+pattern_id: JA_T2KGB_ef136f040800
+status: draft
+pattern: '[X0]は[G{3,3}][X1]山脈の'
+source_id: ont_9_nature_test_136
+ast_sig: ef136f040800d051543b8c8cf4ce5beeaf8876d77a5094d84dad8d3b4c5091dc

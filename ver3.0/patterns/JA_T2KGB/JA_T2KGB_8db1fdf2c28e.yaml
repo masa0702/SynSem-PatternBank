@@ -1,0 +1,5 @@
+pattern_id: JA_T2KGB_8db1fdf2c28e
+status: draft
+pattern: '[X0]は[G{1,1}][Y1][M1]の'
+source_id: ont_4_book_test_457
+ast_sig: 8db1fdf2c28e920aaeedf846b01198e1c5796b5c75a6cf5b051fb3e58899235c

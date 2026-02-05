@@ -1,0 +1,5 @@
+pattern_id: JA_T2KGB_ff2caf67afa3
+status: draft
+pattern: '[X0]は[G{3,3}][X1]を[Y0]としています'
+source_id: ont_4_book_test_421
+ast_sig: ff2caf67afa32b8bb4936bdfc5dafed7fe556ed496f6b4417abaaf642621013f

@@ -1,0 +1,5 @@
+pattern_id: JA_T2KGB_ce2945df7df3
+status: draft
+pattern: '[X0]は[M0]で、[G{2,2}][X1]に[Y0]されました'
+source_id: ont_2_music_test_613
+ast_sig: ce2945df7df3f2464b72957fc4f8f223638a7bc122766076fefb9316cfe59e0c

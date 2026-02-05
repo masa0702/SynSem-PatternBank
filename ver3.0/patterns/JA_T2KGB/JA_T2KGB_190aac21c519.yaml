@@ -1,0 +1,5 @@
+pattern_id: JA_T2KGB_190aac21c519
+status: draft
+pattern: '[X0]は[G{1,1}][X1]を[M1]としていました'
+source_id: ont_3_sport_test_6
+ast_sig: 190aac21c519a4232bfb676bd095390b678badb238333508c8ae7cb9c2863173

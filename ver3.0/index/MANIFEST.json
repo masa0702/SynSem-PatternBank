@@ -1,0 +1,50 @@
+{
+  "inputs": [
+    {
+      "path": "../patterns_from_text.jsonl",
+      "exists": true,
+      "sha256": "181e373d6e78c60b7b905f3449ded2f21b0f37cfb74c611bc2f68e11eeee72c4"
+    },
+    {
+      "path": "../patterns_from_manually.jsonl",
+      "exists": true,
+      "sha256": "3a86e22143b8fa6cf0516a15aae017408adea03c00df8fe3460b4999198267af"
+    }
+  ],
+  "parser": {
+    "dir": "../pattern_grammar",
+    "grammar_sha256": "b5362905224914eed959b768584d87b55a9dc50ada386af9cdd7f4daaecf7a7d"
+  },
+  "output": {
+    "patterns_dir": "patterns/JA_T2KGB",
+    "index_dir": "index",
+    "patterns_count": 342
+  },
+  "stats": {
+    "read_lines": 851,
+    "read_lines_by_input": {
+      "../patterns_from_text.jsonl": 782,
+      "../patterns_from_manually.jsonl": 69
+    },
+    "bad_json": 0,
+    "missing_pattern": 0,
+    "no_literal": 0,
+    "adjacent_xy": 46,
+    "dup_string": 331,
+    "parse_fail": 3,
+    "dup_ast": 129,
+    "kept": 342,
+    "kept_unparsable": 0,
+    "missing_inputs": []
+  },
+  "filters": {
+    "require_literal": true,
+    "reject_adjacent_xy": true,
+    "adjacent_xy_rule": "X/Y要素が &・リテラル・[G] なしで横並び（[X*][Y*] 等の直接連結）"
+  },
+  "dedup_policy": {
+    "string_exact": true,
+    "structural_ast": true,
+    "ast_sig": "sha256(canonicalized_ast)"
+  }
+}

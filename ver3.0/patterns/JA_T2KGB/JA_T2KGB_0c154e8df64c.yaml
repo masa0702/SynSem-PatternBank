@@ -1,0 +1,5 @@
+pattern_id: JA_T2KGB_0c154e8df64c
+status: draft
+pattern: '[X0]は[G{1,2}][X1]&[X2][G{1,1}]がフィーチャーされています'
+source_id: ont_2_music_test_489
+ast_sig: 0c154e8df64ca998d0dcbed3c7bdfc42e2ba8969de3196fbf37b54e55a5e188a

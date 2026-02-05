@@ -1,0 +1,5 @@
+pattern_id: JA_T2KGB_071ac615d540
+status: draft
+pattern: '[X0]は[G{1,2}][X1]が[Y1]'
+source_id: ont_8_politics_test_7
+ast_sig: 071ac615d540c015b3b722719224ff5291398602b0df21954ba433fa863719d5

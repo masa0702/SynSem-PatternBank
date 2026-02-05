@@ -1,0 +1,5 @@
+pattern_id: JA_T2KGB_2607db304455
+status: draft
+pattern: '[X0]は[Y0]である[X1]は'
+source_id: ont_8_politics_test_8
+ast_sig: 2607db304455d5d0743da80cf1b0227d8656822575d6e2ea99448066d8725774

@@ -1,0 +1,5 @@
+pattern_id: JA_T2KGB_29d1414a969c
+status: draft
+pattern: '[X0]が[G{7,7}]教科書[Y0]'
+source_id: ont_4_book_test_461
+ast_sig: 29d1414a969cdcdd9d1ee9bb3160c0c5a82a8d400ee1092ee2de75a23df7c875

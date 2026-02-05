@@ -1,0 +1,5 @@
+pattern_id: JA_T2KGB_4184c7f0c484
+status: draft
+pattern: '[X0]は[G{4,4}][X1]で発見されました'
+source_id: ont_7_space_test_6
+ast_sig: 4184c7f0c484f6e381ffa10082f3434c7b5a6f4c3afc53b11f4395ac55c96cd3

@@ -1,0 +1,5 @@
+pattern_id: JA_T2KGB_a902fcd61299
+status: draft
+pattern: '[X0]は[X1]が[Y1]し、[X2]が[Y2]を書き'
+source_id: ont_1_movie_test_16
+ast_sig: a902fcd612993d7427a69416c6f93bf560eb03cc18916eb8676a4294a0217ed2

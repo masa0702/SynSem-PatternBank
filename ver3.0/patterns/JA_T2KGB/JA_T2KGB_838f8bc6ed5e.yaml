@@ -1,0 +1,5 @@
+pattern_id: JA_T2KGB_838f8bc6ed5e
+status: draft
+pattern: '[X0]は[G{9,9}][X1]が[Y0]として'
+source_id: ont_3_sport_test_310
+ast_sig: 838f8bc6ed5eb0302aeecc9e4066880344301e45a06fc0cedbd27cca573f1cb6

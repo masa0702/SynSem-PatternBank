@@ -1,0 +1,5 @@
+pattern_id: JA_T2KGB_052a069a4698
+status: draft
+pattern: '[X0]は[G{4,4}][X1]の[Y0]に'
+source_id: ont_9_nature_test_305
+ast_sig: 052a069a469822fcace046972b3de22b64cf25f7ad053495087cfa777828dcb5

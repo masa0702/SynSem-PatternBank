@@ -1,0 +1,5 @@
+pattern_id: JA_T2KGB_c993543f59b4
+status: draft
+pattern: '[X0]は[X1]&[X2]が[Y0]であり、[G{5,5}]。'
+source_id: ont_4_book_test_167
+ast_sig: c993543f59b42f43b79f90060a95099146416c843b6c90cdf9ae6d4bc01543dc

@@ -1,0 +1,5 @@
+pattern_id: JA_T2KGB_9801153ccf8e
+status: draft
+pattern: '[X0][G{7,7}][Y0]は[X1]'
+source_id: ont_1_movie_test_669
+ast_sig: 9801153ccf8e8de64f8633ec8016100ef4ba405105836a581607694230c728a0

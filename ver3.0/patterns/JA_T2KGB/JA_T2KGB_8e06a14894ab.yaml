@@ -1,0 +1,5 @@
+pattern_id: JA_T2KGB_8e06a14894ab
+status: draft
+pattern: '[X0]は[G{1,1}]歌手[X1]が'
+source_id: ont_2_music_test_540
+ast_sig: 8e06a14894ab5782fe997df4bf3d6b48e95f4b8cf4409b3ff58a6db9db3a1fa4

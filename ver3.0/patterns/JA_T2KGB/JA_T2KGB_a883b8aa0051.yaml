@@ -1,0 +1,5 @@
+pattern_id: JA_T2KGB_a883b8aa0051
+status: draft
+pattern: '[X0]は[G{4,4}][X1]に[Y0]されました'
+source_id: ont_1_movie_test_788
+ast_sig: a883b8aa0051b2b75929f867708fc651264966176a374b3bbaf3e1b1926f44b3

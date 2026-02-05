@@ -1,0 +1,5 @@
+pattern_id: JA_T2KGB_0a962217da0e
+status: draft
+pattern: '[X0]は[G{1,2}][X1]&[X2]が[Y0]に属する'
+source_id: ont_1_movie_test_122
+ast_sig: 0a962217da0e95594608a15a03a3027be46ee8603c2780798f96f030f845b337
